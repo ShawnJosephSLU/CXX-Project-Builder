@@ -173,14 +173,18 @@ void createGitIgnore() {
     std::ofstream gitIgnoreFile(ABSOLUTE_PROJECT_DIR_PATH + "/.gitignore", std::ios::out);
     gitIgnoreFile << "build/" << std::endl;
     gitIgnoreFile << "*.exec" << std::endl;
+    gitIgnoreFile << ".DS_Store"<< std::endl;
     std::cout << YELLOW <<"\t\t.gitignore Created Successfully." << RESET << std::endl;
 
 }
 
 // initalise git
 void gitInit() {
-    std::string command = "cd " + ABSOLUTE_PROJECT_DIR_PATH + " && git init";
+    system("clear");
+    std::string command = "cd \"" + ABSOLUTE_PROJECT_DIR_PATH + "\" && git init && git add . && git commit -m \"Initial commit\"";
     system(command.c_str());
+    system("clear");
+
 }
 
 // create main.cpp 
@@ -202,12 +206,31 @@ void createMainFile() {
     main_cpp_file.close();
 }
 
+
+void openProjectInVSCode() {
+   
+    // Open Visual Studio Code with the project directory
+    std::string command = "open -a 'Visual Studio Code' \"" + ABSOLUTE_PROJECT_DIR_PATH + "\"";
+    int result = std::system(command.c_str());
+
+    if (result == 0) {
+        // Visual Studio Code was successfully opened
+        std::cout << "Visual Studio Code opened with the project." << std::endl;
+    } else {
+        // Handle any errors while opening Visual Studio Code
+        std::cerr << "Error opening Visual Studio Code. Make sure the project path is correct." << std::endl;
+    }
+}
+
+
 int main() {
 
     creatProjectName();
     createProjectDir();
     createMainFile();
     createGitIgnore();
+    gitInit();
+    openProjectInVSCode();
 
     EXIT_SUCCESS;
 }

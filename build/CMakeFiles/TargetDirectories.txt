@@ -1,0 +1,3 @@
+/Users/alisonjoseph/Desktop/C++ Project Builder/build/CMakeFiles/CppProjectBuilder.dir
+/Users/alisonjoseph/Desktop/C++ Project Builder/build/CMakeFiles/edit_cache.dir
+/Users/alisonjoseph/Desktop/C++ Project Builder/build/CMakeFiles/rebuild_cache.dir
