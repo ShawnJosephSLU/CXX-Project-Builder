@@ -31,8 +31,5 @@ You can use this project builder to quickly set up the basics of your C++ projec
 
 Contributions are welcome. Feel free to improve the script or add new features. If you encounter any issues, please open an issue on this project's GitHub repository.
 
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
