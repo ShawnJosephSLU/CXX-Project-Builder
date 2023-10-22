@@ -1,3 +1,6 @@
+//Author : Shawn Kervin Emmanuel Joseph
+//Conpany Name : MLAB
+
 // this program builds a CMake based CPP Project
 
 #include <iostream>
@@ -157,8 +160,6 @@ void createProjectDir() {
 
 
 
-
-        // do something 
         std::cout << YELLOW <<"\t\tCMakeList.txt Created Successfully." << RESET << std::endl;
 
         cmake_file.close();
@@ -222,6 +223,10 @@ void openProjectInVSCode() {
     }
 }
 
+void buildProject() {
+    std::string command = "cd \"" + PROJECT_BUILD_DIR + "\" && cmake .. && make"; 
+    system(command.c_str());
+}
 
 int main() {
 
@@ -231,6 +236,7 @@ int main() {
     createGitIgnore();
     gitInit();
     openProjectInVSCode();
+    buildProject();
 
     EXIT_SUCCESS;
 }
